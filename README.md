@@ -29,7 +29,7 @@ RaceDay_Part2/
 ## Requirements
 - Visual Studio 2022 with the **ASP.NET and web development** workload, or .NET 8 SDK.
 - SQL Server LabVM2049939\\SQLEXPRESS / SQL Server and SQL Server Management Studio.
-- Internet access for NuGet package restore.
+- Internet access for NuGet package restore. 
 
 ## Configure and run in Visual Studio 2022
 1. Extract this ZIP to a folder you can find, such as Documents.
