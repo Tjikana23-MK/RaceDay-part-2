@@ -1,0 +1,22 @@
+name: RaceDay Part 2 API CI
+on:
+  push:
+    branches: [ "main", "master", "part-2" ]
+  pull_request:
+    branches: [ "main", "master", "part-2" ]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore packages
+        run: dotnet restore RaceDay.sln
+      - name: Build solution
+        run: dotnet build RaceDay.sln --configuration Release --no-restore
+      - name: Run unit tests
+        run: dotnet test RaceDay.sln --configuration Release --no-build --logger "trx;LogFileName=test-results.trx"
